@@ -1,5 +1,10 @@
+# Theme
+theme: minima
+title: ExampleTitle
+author: Andrew Hughes
+description: personal blog
+
 # Where things are
-theme               : minima
 source              : .
 destination         : ./_site
 collections_dir     : .
