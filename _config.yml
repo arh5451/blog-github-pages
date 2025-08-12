@@ -1,3 +1,15 @@
+{# ---
+version: 4.4.1
+name: Jekyll • Simple, blog-aware, static sites
+description: Transform your plain text into static websites and blogs
+url: https://jekyllrb.com
+repository: https://github.com/jekyll/jekyll
+site_branch: master
+timezone: America/Los_Angeles
+twitter:
+  username: jekyllrb
+logo: "/site/static/headshot.jpg" #}
+
 # Core Info
 title:                  "Andrew Hughes"
 baseURL:                "https://andrewhughes.io"
@@ -14,9 +26,16 @@ docs_version:           "5.3"
 rfs_version:            "v10.0.0"
 github_org:             "https://github.com/arh5451"
 repo:                   "https://github.com/arh5451/blog-github-pages"
+site_branch:            master
+timezone:               Eurpoe/Zurich
 x:                      "Words_with_Wood"
+logo:                   "/site/static/headshot.jpg"
 themes:                 "https://themes.getbootstrap.com/"
 icons:                  "https://icons.getbootstrap.com/"
+
+## google_analytics_id: UA-50755011-1
+## google_site_verification: onQcXpAvtHBrUI5LlroHNE_FP0b2qvFyPq7VZw36iEY
+## cloudinary_url: https://res.cloudinary.com/jekyll/image/upload/f_auto,q_auto,w_404 intersting it is so they can use CLI interface with rails or something? maybye look into more later
 
 # Where things are
 source              : .
@@ -28,9 +47,37 @@ data_dir            : _data
 includes_dir        : _includes
 sass:
   sass_dir: _sass
+
 collections:
+  docs:
+    permalink: "/:collection/:path/"
+    output: true
   posts:
-    output          : true
+    permalink: "/news/:year/:month/:day/:title/"
+    output: true
+  tutorials:
+    permalink: "/:collection/:path/"
+    output: true
+defaults:
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: news_item
+- scope:
+    path: _tutorials
+    type: tutorials
+  values:
+    layout: tutorials
+- scope:
+    path: ''
+  values:
+    image: "/img/jekyll-og.png"
 
 # Handling Reading
 safe                : false
