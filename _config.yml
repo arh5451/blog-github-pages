@@ -1,8 +1,22 @@
-# Theme
-theme: minima
-title: ANDREW HUGHES
-author: Andrew Hughes
-description: personal blog
+# Core Info
+title:                  "Andrew Hughes"
+baseURL:                "https://andrewhughes.io"
+
+docsDir:                "site"
+
+subtitle:               "A Personal Blog"
+description:            "My personal blog for all things Finance, Tech, AI, & more!"
+authors:                "Andrew Hughes"
+
+current_version:        "0.0.1"
+current_ruby_version:   "5.3.7"
+docs_version:           "5.3"
+rfs_version:            "v10.0.0"
+github_org:             "https://github.com/arh5451"
+repo:                   "https://github.com/arh5451/blog-github-pages"
+x:                      "Words_with_Wood"
+themes:                 "https://themes.getbootstrap.com/"
+icons:                  "https://icons.getbootstrap.com/"
 
 # Where things are
 source              : .
